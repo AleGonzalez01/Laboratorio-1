@@ -1,19 +1,20 @@
+let arregloInput;
+
 class Usuario{
     constructor(){
-
+        this.posY=0;
+        
     }
-paint(){
 
-}
-focusInputs(mouseX, mouseY){
-    this.mouseX= mouseX;
-    this.mouseY= mouseY;
-}
-writeTextInputs(key){
-    this.key=key;
-}
-erase(){
+    pintar(){
+    
+    }
+    focusInput(mouseX,mouseY){
+    
+    }
 
-}
+    escribirInput(keyPressed){
 
-}
+            }
+  }
+    
