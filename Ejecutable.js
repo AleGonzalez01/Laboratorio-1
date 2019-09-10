@@ -4,6 +4,8 @@ let plato1,plato2,plato3,plato4;
 let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25, im26;
 function setup(){
     pantalla=0;
+
+    login= new Login();
     
     createCanvas(960,610);
     //IMAGENES
@@ -71,11 +73,10 @@ function setup(){
 function draw(){
     switch(pantalla){
     case 0:
-        //LOGING
+        //LOGIN
         image(img1, 0, 0, 960, 610);
         image(img2,144,520,105,38);
-        fill(255);
-        text("GG",300,300);
+        login.pintar();
         break;
     case 1:
         //REGISTRO
@@ -151,12 +152,22 @@ function draw(){
 }
 
 function keyPressed(){
-
+    switch (pantalla){
+        case 0: 
+        if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+            login.escribirInput();
+        }else if(keyCode == 8){
+            login.borrarInput();
+        }
+            break;
+    }
 }
 
 function mousePressed(){
     switch(pantalla){
         case 0:
+            login.focusInputs(mouseX,mouseY);
+
             //LOGIN
             if (mouseY >= 520  && mouseY <= 520+38 && mouseX >=144 && mouseX<=144+105){
                 pantalla=2;
