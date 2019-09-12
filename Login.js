@@ -23,9 +23,9 @@ class Login{
 
         if(this.alerta == true){
             console.log("AVISO ESTA EN TRUE");
-            textSize(15);
+            textSize(18);
             fill(255);
-            text("Correo o contraseña no válidos",110,304);
+            text("Correo o contraseña no válidos",72,325);
             if(frameCount%200==0){
                 this.alerta=false;
             }
