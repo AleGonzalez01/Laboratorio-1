@@ -3,7 +3,9 @@ let resumenPedido;
 let plato1,plato2,plato3,plato4;
 let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25, im26;
 function setup(){
+    usuario1= new Usuario ("mariaf@gmail.com","12345");
     pantalla=0;
+    aviso= false;
 
     login= new Login();
     
@@ -77,6 +79,10 @@ function draw(){
         image(img1, 0, 0, 960, 610);
         image(img2,144,520,105,38);
         login.pintar();
+        /*if(usuario1.correo!= login.arregloInputs[0].texto && 
+            usuario1.contrasena!= login.arregloInputs[1].texto)*/
+                
+        
         break;
     case 1:
         //REGISTRO
@@ -169,8 +175,16 @@ function mousePressed(){
             login.focusInputs(mouseX,mouseY);
 
             //LOGIN
-            if (mouseY >= 520  && mouseY <= 520+38 && mouseX >=144 && mouseX<=144+105){
-                pantalla=2;
+           //login.validarDatos(); 
+           if (mouseY >= 520  && mouseY <= 520+38 && mouseX >=144 && mouseX<=144+105){
+                if(usuario1.correo== login.arregloInputs[0].texto && 
+                    usuario1.contrasena== login.arregloInputs[1].texto){
+                    pantalla=2;
+                  
+                    login.alerta=false;
+                } else{
+                    login.alerta=true;
+                }
             }
             //IR A REGISTRO 231
             if (mouseY >= 483  && mouseY <= 483+14 && mouseX >=154 && mouseX<=154+77){

@@ -1,3 +1,4 @@
+
 class Login{
 
     constructor(){
@@ -5,6 +6,7 @@ class Login{
         this.masPosY=0;
         this.correo;
         this.contrasena;
+        this.alerta = false;
 
         for(let i=0; i<2; i++){
             this.arregloInputs.push(new Input(101,345+this.masPosY));
@@ -18,6 +20,16 @@ class Login{
         }
         this.arregloInputs[0].muestraNormal();
         this.arregloInputs[1].muestraContrasena();
+
+        if(this.alerta == true){
+            console.log("AVISO ESTA EN TRUE");
+            textSize(15);
+            fill(255);
+            text("Correo o contraseña no válidos",110,304);
+            if(frameCount%200==0){
+                this.alerta=false;
+            }
+        }
     }
 
     focusInputs(mousex,mousey){
@@ -47,4 +59,5 @@ class Login{
             }
         }
     }
+
 }

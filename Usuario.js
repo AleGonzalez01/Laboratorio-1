@@ -1,20 +1,22 @@
 let arregloInput;
 
 class Usuario{
-    constructor(){
+    constructor(correo, contrasena){
+        this.correo=correo;
+        this.contrasena= contrasena;
         this.posY=0;
         
     }
 
-    pintar(){
-    
+    login(correo, contrasena){
+        console.log(this.correo);
+        console.log(this.contrasena);
+        console.log(correo);
+        console.log(contrasena);
+        if(correo== this.correo && contrasena == this.contrasena){
+            return true;
+        }
+        return false;
     }
-    focusInput(mouseX,mouseY){
-    
-    }
-
-    escribirInput(keyPressed){
-
-            }
   }
     

@@ -17,13 +17,13 @@ class Input{
     }
 
     muestraContrasena(){
-        let asteriscos;
+        let asteriscos="";
         for(let i=0; i<this.texto.length; i++){
             asteriscos += "*";
         }
         fill(255);
         textSize(16);
-        text(this.texto,this.posX+5,this.posY+10);
+        text(asteriscos,this.posX+5,this.posY+10);
     }
 
     muestraNormal(){
