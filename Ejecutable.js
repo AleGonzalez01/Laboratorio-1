@@ -180,7 +180,8 @@ function mousePressed(){
                 if(usuario1.correo== login.arregloInputs[0].texto && 
                     usuario1.contrasena== login.arregloInputs[1].texto){
                     pantalla=2;
-                  
+                    login.arregloInputs[0].texto= "";
+                    login.arregloInputs[1].texto="";
                     login.alerta=false;
                 } else{
                     login.alerta=true;
