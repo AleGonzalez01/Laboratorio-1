@@ -20,9 +20,19 @@ class Input{
         if(this.focus){
             noStroke();
         }else{
-            fill(56,34,65);
-            rect(this.posX,this.posY,363,27);
+            noStroke();
         }
+        fill(56,34,65);
+        rect(this.posX,this.posY,363,27);
+    }
+    pintarCantidad(){
+        if(this.focus){
+            stroke(255,30,113);
+        }else{
+            noStroke();
+        }
+        fill(255);
+        rect(this.posX,this.posY,97,16);
     }
 
     muestraContrasena(){
