@@ -8,7 +8,7 @@ function setup(){
 
     createCanvas(960,610);
 
-    pantalla=11;
+    pantalla=0;
     aviso= false;
     oton = false;
     oton2 = false;
@@ -336,6 +336,7 @@ function mousePressed(){
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
                 pantalla = 7;
+                moneda=13000;
             }
             break;
         case 4:
@@ -361,6 +362,7 @@ function mousePressed(){
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
                 pantalla = 7;
+                moneda=9000;
             }
             break;
         case 5:
@@ -386,6 +388,7 @@ function mousePressed(){
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
                 pantalla = 7;
+                moneda=12000;
             }
             break;
         case 6:
@@ -411,6 +414,7 @@ function mousePressed(){
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
                 pantalla = 7;
+                moneda=17000;
             }
             break;
         case 7:
