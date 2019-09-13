@@ -3,17 +3,31 @@ let resumenPedido;
 let plato1,plato2,plato3,plato4;
 let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25, im26;
 function setup(){
-    usuario1= new Usuario ("mariaf@gmail.com","12345");
+
+    createCanvas(960,610);
+
     pantalla=0;
     aviso= false;
+    enfocado= false;
+    oton = false;
 
+    //ARREGLOS
+    //CON LA CLASE USUARIO
+    usuario1= new Usuario ("mariaf@gmail.com","12345");
+    //CON LA CLASE LOGIN
     login= new Login();
+    //CON LA CLASE REGISTRO
     registro= new Registro();
+    //CON LA CLASE PLATO
     plato=new Plato();
+    //CON LA CLASE PAGO
     pago= new Pago();
     moneda= "";
+    //CON LA CLASE ADICION
+    boton= new Adicion();
+    adicion = new Adicion();
+
     
-    createCanvas(960,610);
     //IMAGENES
     //LOGIN
     img1 = loadImage('objetos/1corconpantallainicio.png');
@@ -131,6 +145,7 @@ function draw(){
         //ADICIONES
         image(img14,0,0,960,610);
         image(img15,563,452,218,41);
+        boton.pintarBotonAdicion();
         break;
     case 8:
         //PAGO
@@ -394,6 +409,13 @@ function mousePressed(){
             if(mouseY >= 452 && mouseY <= 452+41 && mouseX >= 563 && mouseX <= 563+218){
                 pantalla = 8;
             }
+
+            //BOTON
+            boton.botonFocus();
+            //if(mouseY >= 277 && mouseY <= 277+10 && mouseX >= 610 && mouseX <= 610+10){
+                
+                //}
+
             break;
         case 8:
             //BARRA SUPERIOR
