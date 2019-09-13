@@ -17,6 +17,7 @@ function setup(){
 
     tiempo = 60;
     moneda= "";
+    precio="";
 
     //ARREGLOS
     //CON LA CLASE USUARIO
@@ -189,6 +190,8 @@ function draw(){
         text("Resumen Pedido",410,265);
         text (tiempo+" "+ "minutos",459, 428);
         text(moneda, 456,370);
+        fill(0);
+        text(precio, 520, 370);
         
         break;
     case 12:
@@ -435,20 +438,24 @@ function mousePressed(){
 
             //BOTON
             
-            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 277 && mouseY <= 277+10){
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 277 && mouseY <= 277+10 && oton2==false && oton3==false && oton4==false){
                 oton = true;
-            }
+                precio= "+ 3000";
+            } 
 
-            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 322 && mouseY <= 322+10){
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 322 && mouseY <= 322+10 &&oton1==false && oton3==false && oton4==false){
                 oton2 = true;
+                precio= "+ 4000";
             }
             
-            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 367 && mouseY <= 367+10){
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 367 && mouseY <= 367+10 && oton2==false && oton1==false && oton4==false){
                 oton3 = true;
+                precio= "+ 3000";
             }
 
-            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 412 && mouseY <= 412+10){
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 412 && mouseY <= 412+10 &&oton2==false && oton3==false && oton1==false){
                 oton4 = true;
+                precio= "+ 5000"
             }
 
             break;

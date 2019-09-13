@@ -4,7 +4,6 @@ class Pago{
         this.numeroDeTarjeta;
         this.direccion=new Input(310,235);
         this.cuotas=new Input(573,337);
-        this.nombreDuenoTarjeta;
         this.arregloTarjeta=[];
         this.masPosY=0;
 
