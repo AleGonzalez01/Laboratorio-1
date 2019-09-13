@@ -9,6 +9,7 @@ function setup(){
 
     login= new Login();
     registro= new Registro();
+    plato=new Plato();
     
     createCanvas(960,610);
     //IMAGENES
@@ -104,21 +105,25 @@ function draw(){
         //TACOS
         image(img10,0,0,960,610);
         image(img9,653,478,216,40);
+        plato.pintar();
         break;
     case 4:
         //QUESADILLA
         image(img11,0,0,960,610);
         image(img9,653,478,216,40);
+        plato.pintar();
         break;
     case 5:
         //BURRITOS
         image(img12,0,0,960,610);
         image(img9,653,478,216,40);
+        plato.pintar();
         break;
     case 6:
         //NACHOS
         image(img13,0,0,960,610);
         image(img9,653,478,216,40);
+        plato.pintar();
         break;
     case 7:
         //ADICIONES
@@ -176,6 +181,35 @@ function keyPressed(){
                 registro.erase();
             }
             break;
+        case 3:
+                if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+                    plato.escribirInput();
+                }else if(keyCode == 8){
+                    plato.borrarInput();
+                }
+                break;
+        case 4:
+                if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+                    plato.escribirInput();
+                }else if(keyCode == 8){
+                    plato.borrarInput();
+                }
+                break;
+        case 5:
+                if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+                    plato.escribirInput();
+                }else if(keyCode == 8){
+                    plato.borrarInput();
+                }
+                break;
+        case 6:
+                if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+                    plato.escribirInput();
+                }else if(keyCode == 8){
+                    plato.borrarInput();
+                }
+                break;
+
     }
 }
 
@@ -246,6 +280,7 @@ function mousePressed(){
                 pantalla = 0;
             }
             //TACOS
+            plato.focusInputs(mouseX,mouseY);
                 //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
@@ -267,6 +302,7 @@ function mousePressed(){
                 pantalla = 0;
             }
             //QUESADILLA
+            plato.focusInputs(mouseX,mouseY);
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
@@ -288,6 +324,7 @@ function mousePressed(){
                 pantalla = 0;
             }
             //BURRITOS
+            plato.focusInputs(mouseX,mouseY);
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
@@ -309,6 +346,7 @@ function mousePressed(){
                 pantalla = 0;
             }
             //NACHOS
+            plato.focusInputs(mouseX,mouseY);
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;

@@ -54,6 +54,12 @@ class Input{
         text(asteriscos,this.posX+5,this.posY+30);
     }
 
+    muestraNormalCantidad(){
+        fill(0);
+        noStroke();
+        text(this.texto,this.posX+5,this.posY+11);
+    }
+
     muestraNormal(){
         fill(255);
         textSize(16);

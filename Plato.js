@@ -2,13 +2,12 @@
 class Plato{
     constructor(){
         this.cantidad= new Input(742,423);
-        this.precioPlato=precioPlato;
         
     }
 
     pintar(){
         this.cantidad.pintarCantidad();
-        this.cantidad.muestraNormal();
+        this.cantidad.muestraNormalCantidad();
     }
     focusInputs(mousex,mousey){
         if(mousex>=this.cantidad.posX && mousex<=this.cantidad.posX+97 &&
@@ -19,7 +18,7 @@ class Plato{
             }
     }
     escribirInput(){
-        if(this.cantidad.focus && this.cantidad.texto.length<2){
+        if(this.cantidad.focus && this.cantidad.texto.length<1){
             this.cantidad.texto += key;
         }
     }
