@@ -408,8 +408,16 @@ function mousePressed(){
             }
             //PAGO
             pago.focusInputs(mouseX,mouseY);
+
             if(mouseY >= 510 && mouseY <= 510+37 && mouseX >= 440 && mouseX <= 440+104){
-            pantalla=11;
+                //si los campos no están rellenos te dará error en el pago
+            if(this.pago.direccion.texto=="" || this.pago.cuotas.texto==""){
+                pantalla=10;
+            }
+            if(this.pago.direccion.texto!="" || this.pago.cuotas.texto!=""){
+                pantalla=9;
+            }
+
             }
             break;
         case 9:
