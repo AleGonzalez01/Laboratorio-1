@@ -15,6 +15,15 @@ class Input{
         fill(56,34,65);
         rect(this.posX,this.posY,180,18);
     }
+    pintarInfoTarjeta(){
+        if(this.focus){
+            noStroke();
+        }else{
+            noStroke();
+        }
+        fill(56,34,65);
+        rect(this.posX,this.posY,310,401);
+    }
 
     pintarRegistro(){
         if(this.focus){
