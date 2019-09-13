@@ -22,7 +22,7 @@ class Input{
             noStroke();
         }
         fill(56,34,65);
-        rect(this.posX,this.posY,310,401);
+        rect(this.posX,this.posY,310,10);
     }
 
     pintarRegistro(){

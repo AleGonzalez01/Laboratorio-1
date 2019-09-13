@@ -10,6 +10,7 @@ function setup(){
     login= new Login();
     registro= new Registro();
     plato=new Plato();
+    pago= new Pago();
     
     createCanvas(960,610);
     //IMAGENES
@@ -134,6 +135,7 @@ function draw(){
         //PAGO
         image(img16,0,0,960,610);
         image(img17,420,510,104,37);
+        pago.pintar();
         break;
     case 9:
         //BUENO
@@ -209,6 +211,13 @@ function keyPressed(){
                     plato.borrarInput();
                 }
                 break;
+        case 8: 
+        if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+            pago.escribirInputs();
+        }else if(keyCode == 8){
+            pago.borrarInputs();
+        }
+        break;
 
     }
 }
@@ -384,6 +393,7 @@ function mousePressed(){
                 pantalla = 0;
             }
             //PAGO
+            pago.focusInputs(mouseX,mouseY);
             if(mouseY >= 510 && mouseY <= 510+37 && mouseX >= 440 && mouseX <= 440+104){
             }
             break;

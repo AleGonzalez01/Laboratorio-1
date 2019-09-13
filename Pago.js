@@ -5,11 +5,11 @@ class Pago{
         this.direccion;
         this.nombreDuenoTarjeta;
         this.arregloTarjeta=[];
-        this.masPosY;
+        this.masPosY=0;
 
         for(let i=0; i<2; i++){
             this.arregloTarjeta.push(new Input(310,401+this.masPosY));
-            this.masPosY+=16;
+            this.masPosY+=50;
         }
     }
 
