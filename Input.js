@@ -16,6 +16,15 @@ class Input{
         rect(this.posX,this.posY,180,18);
     }
 
+    pintarRegistro(){
+        if(this.focus){
+            noStroke();
+        }else{
+            fill(56,34,65);
+            rect(this.posX,this.posY,363,29);
+        }
+    }
+
     muestraContrasena(){
         let asteriscos="";
         for(let i=0; i<this.texto.length; i++){
