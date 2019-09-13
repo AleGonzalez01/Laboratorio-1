@@ -1,10 +1,7 @@
-let arregloInput;
-
 class Usuario{
     constructor(correo, contrasena){
         this.correo=correo;
         this.contrasena= contrasena;
-        this.posY=0;
         
     }
 

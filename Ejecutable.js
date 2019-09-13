@@ -1,18 +1,21 @@
 let pantalla;
 let resumenPedido;
 let plato1,plato2,plato3,plato4;
+let tiempo;
 let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25, im26;
+
 function setup(){
 
     createCanvas(960,610);
 
-    pantalla=7;
+    pantalla=11;
     aviso= false;
     oton = false;
     oton2 = false;
     oton3 = false;
     oton4 = false;
 
+    tiempo = 60;
     moneda= "";
 
     //ARREGLOS
@@ -160,11 +163,6 @@ function draw(){
         if(oton4 == true){
             boton.pintarBotonAdicion4();
         }
-        //if(mouseX >= 610 && mouseX <= 610+100 && mouseY >= 277 && mouseY <= 277+100){
-          //      boton.pintarBotonAdicion();
-            //}
-        
-        //boton.botonFocus();
         break;
     case 8:
         //PAGO
@@ -189,7 +187,9 @@ function draw(){
         fill(0);
         textSize(20);
         text("Resumen Pedido",410,265);
-        text(moneda,456,370);
+        text (tiempo+" "+ "minutos",459, 428);
+        text(moneda, 456,370);
+        
         break;
     case 12:
         //HISTORIAL
@@ -537,3 +537,12 @@ function mousePressed(){
             break;
     }
 }
+/*function getRandomArbitrary(min,max){
+    return Math.random * (max-min) + min;
+}
+
+function getRandomInt(min,max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min +100)) +min;
+}*/
