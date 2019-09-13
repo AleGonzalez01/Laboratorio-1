@@ -11,6 +11,7 @@ function setup(){
     registro= new Registro();
     plato=new Plato();
     pago= new Pago();
+    moneda= "";
     
     createCanvas(960,610);
     //IMAGENES
@@ -153,7 +154,8 @@ function draw(){
         image(img23,435,450,104,37);
         fill(0);
         textSize(20);
-        text("resumenPedido",372,265);
+        text("Resumen Pedido",410,265);
+        text(moneda,456,370);
         break;
     case 12:
         //HISTORIAL
@@ -293,6 +295,9 @@ function mousePressed(){
                 //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
+                moneda=13000;
+            }else{
+                moneda="";
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -315,6 +320,9 @@ function mousePressed(){
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
+                moneda=9000;
+            }else{
+                moneda="";
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -337,6 +345,9 @@ function mousePressed(){
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
+                moneda=12000;
+            }else{
+                moneda="";
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -359,6 +370,9 @@ function mousePressed(){
             //PAGAR DE UNA VEZ
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
+                moneda=17000;
+            }else{
+                moneda="";
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -395,6 +409,7 @@ function mousePressed(){
             //PAGO
             pago.focusInputs(mouseX,mouseY);
             if(mouseY >= 510 && mouseY <= 510+37 && mouseX >= 440 && mouseX <= 440+104){
+            pantalla=11;
             }
             break;
         case 9:
@@ -443,6 +458,7 @@ function mousePressed(){
             //RESUMEN (img23,435,450,104,37)
             if(mouseY >= 450 && mouseY <= 450+37 && mouseX >= 435 && mouseX <= 435+104){
                 pantalla = 12;
+
             }
             break;
         case 12:

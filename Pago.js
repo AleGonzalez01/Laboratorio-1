@@ -72,7 +72,7 @@ class Pago{
             let ind=this.direccion.texto.length-1;
             this.direccion.texto=this.direccion.texto.substr(0,ind);
         }
-        if(this.cuotas.focus && this.cuotas.texto.length-1>0){
+        if(this.cuotas.focus && this.cuotas.texto.length-1>=0){
             let indi=this.cuotas.texto.length-1;
             this.cuotas.texto=this.cuotas.texto.substr(0,indi);
 
