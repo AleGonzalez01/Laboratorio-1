@@ -6,10 +6,14 @@ function setup(){
 
     createCanvas(960,610);
 
-    pantalla=0;
+    pantalla=7;
     aviso= false;
-    enfocado= false;
     oton = false;
+    oton2 = false;
+    oton3 = false;
+    oton4 = false;
+
+    moneda= "";
 
     //ARREGLOS
     //CON LA CLASE USUARIO
@@ -22,10 +26,9 @@ function setup(){
     plato=new Plato();
     //CON LA CLASE PAGO
     pago= new Pago();
-    moneda= "";
     //CON LA CLASE ADICION
-    boton= new Adicion();
-    adicion = new Adicion();
+    boton = new Adicion();
+    boton2 = new Adicion();
 
     
     //IMAGENES
@@ -145,7 +148,23 @@ function draw(){
         //ADICIONES
         image(img14,0,0,960,610);
         image(img15,563,452,218,41);
-        boton.pintarBotonAdicion();
+        if(oton == true){
+            boton.pintarBotonAdicion1();
+        }
+        if(oton2 == true){
+            boton.pintarBotonAdicion2();
+        }
+        if(oton3 == true){
+            boton.pintarBotonAdicion3();
+        }
+        if(oton4 == true){
+            boton.pintarBotonAdicion4();
+        }
+        //if(mouseX >= 610 && mouseX <= 610+100 && mouseY >= 277 && mouseY <= 277+100){
+          //      boton.pintarBotonAdicion();
+            //}
+        
+        //boton.botonFocus();
         break;
     case 8:
         //PAGO
@@ -411,10 +430,22 @@ function mousePressed(){
             }
 
             //BOTON
-            boton.botonFocus();
-            //if(mouseY >= 277 && mouseY <= 277+10 && mouseX >= 610 && mouseX <= 610+10){
-                
-                //}
+            
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 277 && mouseY <= 277+10){
+                oton = true;
+            }
+
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 322 && mouseY <= 322+10){
+                oton2 = true;
+            }
+            
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 367 && mouseY <= 367+10){
+                oton3 = true;
+            }
+
+            if(mouseX >= 610 && mouseX <= 610+10 && mouseY >= 412 && mouseY <= 412+10){
+                oton4 = true;
+            }
 
             break;
         case 8:
