@@ -8,8 +8,8 @@ let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,i
 function setup(){
 
     createCanvas(960,610);
-
     pantalla=0;
+
     aviso= false;
 
     oton = false;
@@ -19,6 +19,11 @@ function setup(){
 
     pagoDeb = false;
     pagoCre = false;
+
+    taco = false;
+    burrito = false;
+    quesadilla = false;
+    nachos = false;
 
     tiempo = 60;
     moneda= "";
@@ -213,11 +218,23 @@ function draw(){
     case 12:
         //HISTORIAL
         image(img24,0,0,960,610);
+        if(taco == true){
+            image(plato1,290,222,410,300);
+        }
+        if(quesadilla == true){
+            image(plato3,290,222,410,300);
+        }
+        if(burrito == true){
+            image(plato2,290,222,410,300);
+        }
+        if(nachos == true){
+            image(plato4,290,222,410,300);
+        }
         break;
     }
-    fill(0);
+    /* fill(0);
     textSize(10);
-        text("X: " +mouseX+ "Y" +mouseY,mouseX,mouseY);
+        text("X: " +mouseX+ "Y" +mouseY,mouseX,mouseY);*/
     
 }
 
@@ -355,8 +372,10 @@ function mousePressed(){
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
                 moneda=13000;
+                taco = true;
             }else{
                 moneda="";
+                taco = true;
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -381,8 +400,10 @@ function mousePressed(){
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
                 moneda=9000;
+                quesadilla = true;
             }else{
                 moneda="";
+                quesadilla = true;
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -407,8 +428,10 @@ function mousePressed(){
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
                 moneda=12000;
+                burrito = true;
             }else{
                 moneda="";
+                burrito = true;
             }
                 //AGREGAR ADICCIONES
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
@@ -433,6 +456,7 @@ function mousePressed(){
             if(mouseY >= 477 && mouseY <= 477+120 && mouseX >= 563 && mouseX <= 563+305){
                 pantalla = 8;
                 moneda=17000;
+                nachos = true;
             }else{
                 moneda="";
             }
@@ -440,6 +464,7 @@ function mousePressed(){
             if(mouseY >= 405 && mouseY <= 405+11 && mouseX >= 712 && mouseX <= 712+79){
                 pantalla = 7;
                 moneda=17000;
+                nachos = true;
             }
             break;
         case 7:
