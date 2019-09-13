@@ -78,5 +78,13 @@ class Pago{
         }
     }
 
+    pintarBotondebito(){
+        fill(0);
+        ellipse(429,309,12,12);
+    }
+    pintarBotonCredito(){
+        fill(0);
+        ellipse(429,343,12,12);
+    }
 
 }

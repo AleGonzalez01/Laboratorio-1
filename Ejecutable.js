@@ -2,6 +2,7 @@ let pantalla;
 let resumenPedido;
 let plato1,plato2,plato3,plato4;
 let tiempo;
+var arregloUsuarios=[];
 let img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20,img21,img22,img23,img24,img25, im26;
 
 function setup(){
@@ -10,10 +11,14 @@ function setup(){
 
     pantalla=0;
     aviso= false;
+
     oton = false;
     oton2 = false;
     oton3 = false;
     oton4 = false;
+
+    pagoDeb = false;
+    pagoCre = false;
 
     tiempo = 60;
     moneda= "";
@@ -34,6 +39,11 @@ function setup(){
     boton = new Adicion();
     boton2 = new Adicion();
 
+     //Arreglo de usuarios para agregar
+     var usuariosGuardados = localStorage.getItem('usuarios');
+     if(usuariosGuardados){
+         arregloUsuarios = JSON.parse(usuariosGuardados);
+     }
     
     //IMAGENES
     //LOGIN
@@ -170,6 +180,12 @@ function draw(){
         image(img16,0,0,960,610);
         image(img17,420,510,104,37);
         pago.pintar();
+        if(pagoDeb == true){
+            pago.pintarBotondebito();
+        }
+        if(pagoCre == true){
+            pago.pintarBotonCredito();
+        }
         break;
     case 9:
         //BUENO
@@ -289,6 +305,12 @@ function mousePressed(){
             registro.focusInputs(mouseX,mouseY);
             if (mouseY >= 520  && mouseY <= 520+38 && mouseX >=616 && mouseX<=616+105){
                 pantalla=2;
+                //INTENTO DE AGREGAR pero sale error. igual deja pasar a la otra pantalla
+                var user = new Usuario(correo,contrasena,nombre,confirmar);
+                arregloUsuarios.push(user);
+
+                nombre=' ';
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
             }
             break;
         case 2:
@@ -481,7 +503,14 @@ function mousePressed(){
             if(this.pago.direccion.texto!="" || this.pago.cuotas.texto!=""){
                 pantalla=9;
             }
+            }
+            //BOTON
+            if(mouseX >= 424 && mouseX <= 424+10 && mouseY >= 30 && mouseY <= 305+10 && pagoCre== false){
+                pagoDeb = true;
+            }
 
+            if(mouseX >= 424 && mouseX <= 424+10 && mouseY >= 338 && mouseY <= 338+10 && pagoDeb == false){
+                pagoCre = true;
             }
             break;
         case 9:
@@ -527,7 +556,7 @@ function mousePressed(){
             if(mouseY >= 22 && mouseY <= 22+13 && mouseX >=840 && mouseX <= 840+82){
                 pantalla = 0;
             }
-            //RESUMEN (img23,435,450,104,37)
+            //RESUMEN
             if(mouseY >= 450 && mouseY <= 450+37 && mouseX >= 435 && mouseX <= 435+104){
                 pantalla = 12;
 
