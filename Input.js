@@ -52,6 +52,15 @@ class Input{
         fill(56,34,65);
         rect(this.posX,this.posY,310,18);
     }
+    pintarCuotas(){
+        if(this.focus){
+            stroke(255,30,113);
+        }else{
+            noStroke();
+        }
+        fill(255);
+        rect(this.posX,this.posY,71,14);
+    }
 
     muestraContrasena(){
         let asteriscos="";
@@ -74,6 +83,12 @@ class Input{
 
     muestraNormalCantidad(){
         fill(0);
+        noStroke();
+        text(this.texto,this.posX+5,this.posY+11);
+    }
+    muestraNormalCuotas(){
+        fill(0);
+        textSize(12);
         noStroke();
         text(this.texto,this.posX+5,this.posY+11);
     }
