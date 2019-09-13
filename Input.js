@@ -22,7 +22,7 @@ class Input{
             noStroke();
         }
         fill(56,34,65);
-        rect(this.posX,this.posY,310,10);
+        rect(this.posX,this.posY,310,18);
     }
 
     pintarRegistro(){
@@ -42,6 +42,15 @@ class Input{
         }
         fill(255);
         rect(this.posX,this.posY,97,16);
+    }
+    pintarDireccion(){
+        if(this.focus){
+            noStroke();
+        }else{
+            noStroke();
+        }
+        fill(56,34,65);
+        rect(this.posX,this.posY,310,18);
     }
 
     muestraContrasena(){
