@@ -8,6 +8,7 @@ function setup(){
     aviso= false;
 
     login= new Login();
+    registro= new Registro();
     
     createCanvas(960,610);
     //IMAGENES
@@ -89,6 +90,7 @@ function draw(){
         image(img3,0,0,960,610);
         image(img2,616,520,105,38);
         image(img26,40,450,191,149);
+        registro.paint();
         break;
     case 2:
         //MENU
@@ -166,6 +168,14 @@ function keyPressed(){
             login.borrarInput();
         }
             break;
+
+        case 1:
+            if(keyCode != 8 && keyCode !=17 && keyCode !=18 && keyCode != 20){
+                registro.writeTextInputs();
+            }else if(keyCode == 8){
+                registro.erase();
+            }
+            break;
     }
 }
 
@@ -194,6 +204,7 @@ function mousePressed(){
             break;
         case 1:
             //REGISTRO
+            registro.focusInputs(mouseX,mouseY);
             if (mouseY >= 520  && mouseY <= 520+38 && mouseX >=616 && mouseX<=616+105){
                 pantalla=2;
             }
