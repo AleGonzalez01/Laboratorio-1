@@ -16,10 +16,10 @@ class Registro{
         for(let i=0; i<this.arregloRegistro.length; i++){
            this.arregloRegistro[i].pintarRegistro();
         }
-        this.arregloRegistro[0].muestraNormal();
-        this.arregloRegistro[1].muestraNormal();
-        this.arregloRegistro[2].muestraContrasena();
-        this.arregloRegistro[3].muestraContrasena();
+        this.arregloRegistro[0].muestraNormalR();
+        this.arregloRegistro[1].muestraNormalR();
+        this.arregloRegistro[2].muestraContrasenaR();
+        this.arregloRegistro[3].muestraContrasenaR();
     }
     focusInputs(mousex, mousey){
         for(let i=0; i<this.arregloRegistro.length;i++){

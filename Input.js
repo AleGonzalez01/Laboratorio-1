@@ -21,7 +21,7 @@ class Input{
             noStroke();
         }else{
             fill(56,34,65);
-            rect(this.posX,this.posY,363,29);
+            rect(this.posX,this.posY,363,27);
         }
     }
 
@@ -32,12 +32,26 @@ class Input{
         }
         fill(255);
         textSize(16);
-        text(asteriscos,this.posX+5,this.posY+10);
+        text(asteriscos,this.posX+5,this.posY+15);
+    }
+    muestraContrasenaR(){
+        let asteriscos="";
+        for(let i=0; i<this.texto.length; i++){
+            asteriscos += "*";
+        }
+        fill(255);
+        textSize(16);
+        text(asteriscos,this.posX+5,this.posY+30);
     }
 
     muestraNormal(){
         fill(255);
         textSize(16);
         text(this.texto,this.posX+5,this.posY+10);
+    }
+    muestraNormalR(){
+        fill(255);
+        textSize(16);
+        text(this.texto,this.posX+5,this.posY+20);
     }
 }
